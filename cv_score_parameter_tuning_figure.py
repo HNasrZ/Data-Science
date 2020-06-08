@@ -4,8 +4,8 @@ def display_plot(cv_scores, cv_scores_std):
     fig = plt.figure()
     ax = fig.add_subplot(1,1,1)
     ax.plot(alpha_space, cv_scores)
-
-    std_error = cv_scores_std / np.sqrt(10)
+    cv=10
+    std_error = cv_scores_std / np.sqrt(cv)
 
     ax.fill_between(alpha_space, cv_scores + std_error, cv_scores - std_error, alpha=0.2)
     ax.set_ylabel('CV Score +/- Std Error')
